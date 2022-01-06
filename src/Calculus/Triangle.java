@@ -17,4 +17,9 @@ public class Triangle extends Polygon{
         super(dim1, dim2);
         this.area = (dim1 * dim2) / 2;
     }
+
+    @Override
+    public double getArea() {
+        return dim1 * dim2 / 2;
+    }
 }
