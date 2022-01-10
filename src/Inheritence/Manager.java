@@ -6,7 +6,7 @@ public class Manager extends Supervisor{
 
     public List<String> qualification;
 
-    public Manager(String id, String name, String experience, List<String> skillset) {
+    public Manager(String id, String name, int experience, List<String> skillset) {
         super(id, name, experience);
         this.qualification = skillset;
     }
