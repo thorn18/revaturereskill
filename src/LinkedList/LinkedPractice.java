@@ -26,4 +26,22 @@ public class LinkedPractice {
     private void printList() {
         System.out.println(doubleList.toString());
     }
+
+    private void developList() {
+        doubleList.add(12.0);
+        doubleList.add(4.3);
+        doubleList.add(11.7);
+        doubleList.add(3.0);
+        doubleList.add(-100.0);
+        doubleList.add(1225.3);
+        doubleList.add(49.1);
+    }
+
+    private double sum() {
+        double sum = 0;
+        for(double d: doubleList) {
+            sum += d;
+        }
+        return sum;
+    }
 }
