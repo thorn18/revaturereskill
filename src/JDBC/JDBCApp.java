@@ -4,11 +4,15 @@ import java.sql.*;
 public class JDBCApp {
 
     public static void main(String[] args) {
-        String url = "Mysqsl://localhost:3306/";
-        String dbname = "newschema";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        String url = "jdbc:mysql://localhost:3306/newschema";
         String username = "root";
         String password = "268442abc";
-        final String QUERY = "SELECT id, first, last, age FROM Employees";
+        final String QUERY = "SELECT id, name FROM employee";
 
 
         // Open a connection
@@ -19,9 +23,7 @@ public class JDBCApp {
             while (rs.next()) {
                 // Retrieve by column name
                 System.out.print("ID: " + rs.getInt("id"));
-                System.out.print(", Age: " + rs.getInt("age"));
-                System.out.print(", First: " + rs.getString("first"));
-                System.out.println(", Last: " + rs.getString("last"));
+                System.out.print(", Name: " + rs.getString("name"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
