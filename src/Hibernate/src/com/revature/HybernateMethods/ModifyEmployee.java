@@ -1,4 +1,4 @@
-package src.Hibernate.src.com.revature.beans;
+package src.Hibernate.src.com.revature.HybernateMethods;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

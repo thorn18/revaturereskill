@@ -1,13 +1,14 @@
-package src.Hibernate.src.com.revature.beans;
+package src.Hibernate.src.com.revature.HybernateMethods;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import src.Hibernate.src.com.revature.SessionFactoryMaker;
+import src.Hibernate.src.com.revature.beans.Employee;
 
 import java.util.List;
 
-public class FindEmployee {
+public class DeleteEmployee {
 
     public static void main(String[] args) {
         SessionFactory sessionFactory = SessionFactoryMaker.getFactory();
@@ -15,13 +16,8 @@ public class FindEmployee {
 
         session.beginTransaction();
 
-        com.revature.beans.Employee emp = session.find(com.revature.beans.Employee.class, 1);
-        Query query = session.createQuery("from Employee ");
-        List<com.revature.beans.Employee> employees = query.list();
-        employees.stream()
-                .forEach(System.out::println);
-
-        session.close();
+        Employee emp = new Employee("Tyler", "Horn");
+        session.delete(emp);
         sessionFactory.close();
     }
 }
