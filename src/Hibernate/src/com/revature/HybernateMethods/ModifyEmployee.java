@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import src.Hibernate.src.com.revature.SessionFactoryMaker;
+import src.Hibernate.src.com.revature.beans.Employee;
 
 public class ModifyEmployee {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class ModifyEmployee {
         session.beginTransaction();
 
         Transaction transaction = session.beginTransaction();
-        com.revature.beans.Employee employee = session.find(com.revature.beans.Employee.class, 2);
+        Employee employee = session.find(Employee.class, 2);
         employee.setFirstName("Mark");
         employee.setLastName("Horn");
         session.update(employee);

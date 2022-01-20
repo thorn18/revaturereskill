@@ -7,9 +7,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App_01 {
     public static void main(String[] args) {
-        Employee employee = new Employee(101, "Kishor", "Kumar", 10);
+        Employee employee = new Employee(101, "Tyler", "Horn", "Stars@gmail.com");
         ApplicationContext ctxt = new ClassPathXmlApplicationContext("spring.xml");
-        SaverController controller = ctxt.getBean(SaverController.class);
+        SaverController controller = (SaverController) ctxt.getBean("Saver", SaverController.class);
         controller.save(employee);
     }
 }

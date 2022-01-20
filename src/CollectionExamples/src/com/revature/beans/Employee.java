@@ -1,4 +1,4 @@
-package com.revature.beans;
+package src.CollectionExamples.src.com.revature.beans;
 
 import java.io.Serializable;
 
@@ -7,6 +7,8 @@ public class Employee implements Comparable<Employee>, Serializable {
     String firstName;
     String lastName;
     String email;
+
+
     public String toCSV(){
         return id+", "+firstName+", "+lastName+", "+email;
     }
@@ -100,4 +102,5 @@ public class Employee implements Comparable<Employee>, Serializable {
                 && this.lastName.equals(employee.getLastName())
                 && this.email.equals(employee.getEmail());
     }
+
 }
